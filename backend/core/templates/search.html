@@ -1,0 +1,102 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="{% static 'images/book-store-favicon-32x32.png' %}">
+    <link rel="stylesheet" href="{% static 'pages.css' %}">
+    <link rel="stylesheet" href="{% static 'main.css' %}">
+    <title>Book Haven</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="book_search">
+        <!-- nav -->
+        <nav class="navbar">
+            <div class="logo" onclick="gohome()">
+                <img src="{% static 'images/book-store-logo.png' %}" alt="Logo">
+                <span>Book Haven</span>
+            </div>
+
+            <div class="burger" id="burger">
+                <img src="{% static 'images/burger.jpg' %}" alt="burgerIcon" class="icon">
+            </div>
+
+            <ul class="nav-links" id="nav-links">
+                <li><a href="../">Home</a></li>
+                <li class="active"><a href="#">Book Search</a></li>
+                <li><a href="../profile">Profile</a></li>
+                <li><a href="../listAdmin">Edit Books</a></li>
+            </ul>
+
+            <div class="auth-buttons" id="auth-buttons">
+                <!-- <a href="{% static 'files/pages/signup.html' %}" class="signup-btn"> Sign Up</a>
+                <a href="{% static 'files/pages/login.html' %}" class="signin-btn"> Sign In</a> -->
+            </div>
+        </nav>
+        <!-- Filter Section -->
+        <div class="filters">
+            <!-- Top Row: Search -->
+            <div class="filter-search">
+                <label for="search">Search</label>
+                <input type="text" id="search" placeholder="Book title or author...">
+            </div>
+
+            <!-- Bottom Row: Dropdowns -->
+            <div class="filter-options">
+                <div class="filter-group">
+                    <label for="category">Category</label>
+                    <select id="category">
+                        <option value="">All</option>
+                        <option value="self-help">Self-help</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="business">Business</option>
+                        <option value="خيال علمي">خيال علمي</option>
+                        <option value="غموض نفسي">غموض نفسي</option>
+                        <option value="Memoir">Memoir</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="availability">Availability</label>
+                    <select id="availability">
+                        <option value="">All</option>
+                        <option value="available">Available</option>
+                        <option value="unavailable">Unavailable</option>
+                    </select>
+                </div>
+
+                <div class="filter-group">
+                    <label for="sort">Sort By</label>
+                    <select id="sort">
+                        <option value="">Default</option>
+                        <option value="title">Title</option>
+                        <option value="author">Author</option>
+                        <option value="latest">Latest</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- main -->
+        <section class="book-section">
+            <div class="book-grid">
+            </div>
+        </section>
+    </div>
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <script src="{% static 'main.js' %}" type="module"></script>
+    <script src="{% static 'js/search.js' %}" type="module"></script>
+    <!-- Load jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>

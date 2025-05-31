@@ -1,0 +1,103 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      href="{% static 'images/book-store-favicon-32x32.png' %}"
+    />
+    <link rel="stylesheet" href="{% static 'pages.css' %}" />
+    <link rel="stylesheet" href="{% static 'main.css' %}" />
+    <title>Book Haven</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=filter_alt"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&family=Prata&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <!-- nav -->
+    <nav class="navbar">
+      <div class="logo" onclick="gohome()">
+        <img src="{% static 'images/book-store-logo.png' %}" alt="Logo" />
+        <span>Book Haven</span>
+      </div>
+
+      <div class="burger" id="burger">
+        <img
+          src="{% static 'images/burger.jpg' %}"
+          alt="burgerIcon"
+          class="icon"
+        />
+      </div>
+
+      <ul class="nav-links" id="nav-links">
+        <li><a href="../../">Home</a></li>
+        <li><a href="../../search">Book Search</a></li>
+        <li><a href="../../profile">Profile</a></li>
+        <li><a href="../../listAdmin">Edit Books</a></li>
+      </ul>
+
+      <div class="auth-buttons" id="auth-buttons">
+        <!-- <a href="{% static 'files/pages/signup.html' %}" class="signup-btn"> Sign Up</a>
+                    <a href="{% static 'files/pages/login.html' %}" class="signin-btn"> Sign In</a> -->
+      </div>
+    </nav>
+
+    <!-- main -->
+    <div class="form-container add">
+      <div class="libHead">
+        <h2>Create a new Book</h2>
+        <a href="/listAdmin/">
+          <button class="btn red">Cancel</button>
+        </a>
+      </div>
+      <form id="bookForm">
+        <input
+          type="text"
+          placeholder="Enter book title"
+          id="bookname"
+          required
+        />
+        <input
+          type="text"
+          placeholder="Enter author name"
+          id="authorname"
+          required
+        />
+        <input type="text" placeholder="Category" id="category" required />
+        <textarea
+          placeholder="Enter book description"
+          id="desc"
+          required
+        ></textarea>
+
+        <div class="upload-section">
+          <label for="coverInput" class="upload-label"
+            >Choose Cover Image</label
+          >
+          <input type="file" id="coverInput" accept="image/*" />
+          <img
+            id="coverPreview"
+            src="#"
+            alt="Cover Preview"
+            style="display: none"
+          />
+        </div>
+
+        <button type="submit" class="submit-btn">Add Book</button>
+      </form>
+    </div>
+    <button id="scrollTopBtn" title="Go to top">↑</button>
+    <script src="{% static 'main.js' %}" type="module"></script>
+    <script src="{% static 'js/addBook.js' %}" type="module"></script>
+    <!-- Load jQuery from CDN -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </body>
+</html>
