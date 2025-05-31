@@ -1,5 +1,6 @@
 # bookStore
 How to run the program 
+
 1 Create a Virtual Environment
   cd backend 
   venv\Scripts\activate         # On Windows
