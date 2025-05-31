@@ -2,8 +2,8 @@
 How to run the program 
 
 1 Create a Virtual Environment ---->
-  cd backend 
-  venv\Scripts\activate         # On Windows
+  1.1 cd backend 
+  1.2 venv\Scripts\activate         # On Windows
 
 2 Install Dependencies ---->
   pip install -r requirements.txt
